@@ -1,15 +1,15 @@
-var test = require("./test");
-var Note = require("./note-model");
+var assert = require("./assert").assert;
+var Note = require("./note-model").Note;
 
 function testNoteStoresText() {
   var note = new Note("some text");
-  test.isTrue(note.text === "some text");
+  assert.isTrue(note.text === "some text");
 }
 
-function testNoteReturnsText() {
+function testNoteReturnText() {
   var note = new Note("some text");
-  test.isTrue(note.returnNoteText === "some text");
+  assert.isTrue(note.returnNoteText() === "some text");
 }
 
 testNoteStoresText();
-testNoteReturnsText();
+testNoteReturnText();

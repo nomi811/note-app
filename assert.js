@@ -8,6 +8,8 @@
     throw new Error("Test passed:" + assertionToCheck);
     }
   }
-exports.isTrue = isTrue;
+  exports.assert = {
+      isTrue: isTrue
+    };
 
 })(this);
