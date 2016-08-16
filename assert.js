@@ -12,4 +12,6 @@
       isTrue: isTrue
     };
 
+    //alternative is exports.isTrue = isTrue;
+
 })(this);
