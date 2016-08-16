@@ -1,8 +1,8 @@
-// Stores an array of note models.this.notes = []
+// 1. Stores an array of note models.this.notes = []
 
-//Has a method that will return all the note models stored in the array.
+//2. Has a method that will return all the note models stored in the array.
 
-// Has a method that creates a new note model
+// 3. Has a method that creates a new note model
 // and stores it. This function
 // takes the text of a note as an argument.
 
