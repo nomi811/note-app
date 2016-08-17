@@ -1,7 +1,9 @@
-function changeText(text)
-{
- element = document.getElementById('app');
- element.innerHTML = text;
-}
+(function(exports) {
+  function changeText(text)
+  {
+   element = document.getElementById('app');
+   element.innerHTML = text;
+  }
 
-changeText('howdy');
+  changeText('howdy');
+})(this);
