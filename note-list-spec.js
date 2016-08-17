@@ -6,31 +6,38 @@
 // and stores it. This function
 // takes the text of a note as an argument.
 
-
-
-var assert = require("./assert").assert;
-var noteList = require("./note-list-model").noteList;
-
 function testHasArrayOfNotes (){
   var list = new noteList();
-assert.isTrue(list.notes.length === 0);
+  if (list.notes.length === 0) {
+    console.log("testHasArrayOfNotes: passed");
+  }
+  else {
+    console.log("testHasArrayOfNotes: failed");
+  }
 }
 
 function testReturnsArrayofNotes (){
   var list = new noteList();
   list.createNote('text');
-
-  assert.isTrue(list.getAllNotes()[0].text === "text");
+  if (list.getAllNotes()[0].text === "text") {
+    console.log("testReturnsArrayofNotes: passed");
+  }
+  else {
+    console.log("testReturnsArrayofNotes:failed");
+  }
 }
 
-
-function testCreatesNewNoteModel(){
+function testCreateNote(){
   var list = new noteList();
   list.createNote('text');
-  assert.isTrue(list.notes.length === 1);
-  assert.isTrue(list.notes.includes('text'));
+  if (list.notes.length === 1) {
+    console.log("testCreateNote: passed");
+  }
+  else {
+    console.log("testCreateNote: failed");
+  }
 }
 
 testHasArrayOfNotes();
-testCreatesNewNoteModel();
+testCreateNote();
 testReturnsArrayofNotes();

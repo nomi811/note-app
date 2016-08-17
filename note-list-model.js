@@ -1,20 +1,18 @@
-var Note = require('./note-model').Note;
-
 (function(exports){
 
-function noteList(){
-  this.notes = [];
+  function noteList(){
+    this.notes = [];
 
-noteList.prototype.createNote = function(text) {
-  note = new Note(text);
-  this.notes.push(note);
-};
+  noteList.prototype.createNote = function(text) {
+    note = new Note(text);
+    this.notes.push(note);
+  };
 
-noteList.prototype.getAllNotes = function () {
-  return this.notes;
-};
+  noteList.prototype.getAllNotes = function () {
+    return this.notes;
+  };
 
-}
-exports.noteList = noteList;
+  }
+  exports.noteList = noteList;
 
 })(this);
