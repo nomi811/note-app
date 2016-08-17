@@ -12,7 +12,7 @@
 
   };
 
-  ListView.prototype.listingFunction = function (someList) {
+  ListView.prototype.listingFunction = function(someList) {
 
     var stringArray = [];
     someList.getAllNotes().forEach(function(note) {
