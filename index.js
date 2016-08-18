@@ -1,3 +1,4 @@
 var list = new noteList();
-
-list.createNote("Favourite drink: seltzer");
+noteList.store('Favourite drink: seltzer');
+var noteController = new NoteController(noteList);
+noteController.insertHTML();

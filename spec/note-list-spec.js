@@ -1,43 +1,14 @@
-// 1. Stores an array of note models.this.notes = []
+var noteList = new NoteList();
 
-//2. Has a method that will return all the note models stored in the array.
+it('NoteList stores notes', function() {
+  var noteOne = "Hello World!";
+  var noteTwo = 'Coding is great!';
 
-// 3. Has a method that creates a new note model
-// and stores it. This function
-// takes the text of a note as an argument.
+  noteList.store(noteOne);
+  noteList.store(noteTwo);
 
-function testHasArrayOfNotes (){
-  var list = new noteList();
-  if (list.notes.length === 0) {
-    console.log("testHasArrayOfNotes: passed");
-  }
-  else {
-    console.log("testHasArrayOfNotes: failed");
-  }
-}
-
-function testReturnsArrayofNotes (){
-  var list = new noteList();
-  list.createNote('text');
-  if (list.getAllNotes()[0].text === "text") {
-    console.log("testReturnsArrayofNotes: passed");
-  }
-  else {
-    console.log("testReturnsArrayofNotes:failed");
-  }
-}
-
-function testCreateNote(){
-  var list = new noteList();
-  list.createNote('text');
-  if (list.notes.length === 1) {
-    console.log("testCreateNote: passed");
-  }
-  else {
-    console.log("testCreateNote: failed");
-  }
-}
-
-testHasArrayOfNotes();
-testCreateNote();
-testReturnsArrayofNotes();
+  var testList = noteList.list();
+  var validateFirstNote = (testList[0].showNote() === noteOne);
+  var validateSecondNote = (testList[1].showNote() === noteTwo);
+  isTrue(validateFirstNote === validateSecondNote);
+});

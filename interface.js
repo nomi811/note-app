@@ -1,5 +1,5 @@
 var noteList = new noteList();
-noteList.createNote("I love node more than I love Ruby");
-noteList.createNote("I will be a coding genius one day I promise");
+noteList.store("I love node more than I love Ruby");
+noteList.store("I will be a coding genius one day I promise");
 var noteController = new NoteController(noteList);
-noteController.getHTML();
+noteController.insertHTML();

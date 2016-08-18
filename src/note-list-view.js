@@ -1,15 +1,17 @@
 (function(exports) {
 
-  function ListView(list) {
-    this.listView = list;
+  function ListView(notelist) {
+    this.noteList = noteList;
   }
 
-  ListView.prototype.turnIntoHtml = function () {
-    var listToHtml = this.listView.getAllNotes();
-    var mappedList = listToHtml.map(function(note){
-      return '<li><div>' + note.returnNoteText() + '</div></li>';
+  ListView.prototype.printListHTML = function () {
+    addHTML = '<ul>';
+    this.noteList.list().forEach(function(note) {
+      var shortNote = note.showNote().substring(0, 20);
+      addHTML += '<li><div>' + shortNote + '</div></li>';
     });
-    return '<ul>' + mappedList.join('') + '</ul>';
+    addHTML += '</ul>';
+    return addHTML;
   };
 
 
