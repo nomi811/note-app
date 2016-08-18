@@ -1,26 +1,17 @@
 (function(exports) {
 
   function ListView(list) {
-
-    this.listOfNotes = list;
+    this.listView = list;
   }
 
   ListView.prototype.turnIntoHtml = function () {
-
-    var wholeHtmlString = "<ul>" + this.listingFunction(this.listOfNotes) + "</ul>";
-    return wholeHtmlString;
-
-  };
-
-  ListView.prototype.listingFunction = function(someList) {
-
-    var stringArray = [];
-    someList.getAllNotes().forEach(function(note) {
-      stringArray.push("<li><div>" + note.text + "</div></li>");
+    var listToHtml = this.listView.getAllNotes()
+    var mappedList = listToHtml.map(function(note){
+      return '<li><div>' + note.returnNoteText() + '</div></li>'
     });
-    return stringArray.join("");
-
+    return '<ul>' + mappedList.join('') + '</ul>'
   };
+
 
   exports.ListView = ListView;
 

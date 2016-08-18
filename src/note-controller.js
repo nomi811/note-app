@@ -5,10 +5,9 @@
 
 
   NoteController.prototype.getHTML = function() {
-    var listView = new ListView(this.
-      list);
-    var appDiv = document.getElementById('app');
-    appDiv.innerHTML = listView.turnIntoHtml();
+      var listView = new ListView(this.list);
+      var appDiv = document.getElementById('app');
+      appDiv.innerHTML = listView.turnIntoHtml();
   };
 
   exports.NoteController = NoteController;
