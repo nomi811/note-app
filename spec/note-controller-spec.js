@@ -6,7 +6,7 @@ function testNoteControllerPrintHTML() {
   var appDiv = document.createElement('div', {id: 'app'});
     document.getElementById = function(){
       return appDiv;
-    }
+    };
 
 
   var listView = new ListView(list);
