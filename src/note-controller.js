@@ -1,11 +1,11 @@
 (function(exports) {
-  function NoteController(list) {
-    this._list = list;
+  function NoteController(view) {
+    this._view = view;
   }
 
 
   NoteController.prototype.printList = function() {
-    var listView = new ListView(this._list);
+    var listView = new ListView(this._view);
     var appDiv = document.getElementById('app');
     appDiv.innerHTML = listView.htmlList();
   };
