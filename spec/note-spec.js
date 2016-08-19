@@ -1,4 +1,5 @@
 it('Note saves text when created', function() {
-  var note = new Note('Hello');
-  isTrue(note.showNote() === 'Hello');
+  var myNote = 'Hello';
+  var note = new Note(myNote);
+  isTrue(note.showNote() === myNote);
 });

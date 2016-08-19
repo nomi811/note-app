@@ -1,14 +1,16 @@
-var noteList = new NoteList();
 
-it('NoteList stores notes', function() {
+
+it('List stores notes', function() {
   var noteOne = "Hello World!";
   var noteTwo = 'Coding is great!';
 
-  noteList.store(noteOne);
-  noteList.store(noteTwo);
+  var list = new List();
 
-  var testList = noteList.list();
-  var validateFirstNote = (testList[0].showNote() === noteOne);
-  var validateSecondNote = (testList[1].showNote() === noteTwo);
-  isTrue(validateFirstNote === validateSecondNote);
+  list.store(noteOne);
+  list.store(noteTwo);
+
+  var testList = list.returnNotes();
+  isTrue(testList.length === 2);
+  isTrue(testList[0].showNote() === noteOne);
+  isTrue(testList[1].showNote() === noteTwo);
 });

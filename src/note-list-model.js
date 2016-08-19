@@ -1,17 +1,18 @@
 (function(exports){
 
-  function NoteList(){
+  function List(){
     this.listArr = [];
   }
 
-  NoteList.prototype.store = function(note) {
-    this.listArr .push(new Note(note));
+  List.prototype.store = function(note) {
+    var noteItem = new Note(note);
+    this.listArr .push(noteItem);
   };
 
-  NoteList.prototype.list = function() {
+  List.prototype.returnNotes = function() {
     return this.listArr;
   };
 
-  exports.NoteList = NoteList;
+  exports.List = List;
 
 })(this);

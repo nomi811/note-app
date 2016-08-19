@@ -1,16 +1,14 @@
 (function(exports) {
-  function NoteController(notelist) {
-    this.noteListView = new ListView(noteList);
+  function NoteController(list) {
+    this._list = list;
   }
 
 
-  NoteController.prototype._getAppDiv = function() {
-      return document.getElementById('app');
+  NoteController.prototype.printList = function() {
+    var listView = new ListView(this._list);
+    var appDiv = document.getElementById('app');
+    appDiv.innerHTML = listView.htmlList();
   };
-
-  NoteController.prototype.insertHTML = function() {
-    this._getAppDiv().innerHTML = this.noteListView.printListHTML();
-  }; 
 
   exports.NoteController = NoteController;
 })(this);
