@@ -6,7 +6,7 @@
 
   List.prototype.store = function(note) {
     var noteItem = new Note(note);
-    this.listArr .push(noteItem);
+    this.listArr.push(noteItem);
   };
 
   List.prototype.returnNotes = function() {
